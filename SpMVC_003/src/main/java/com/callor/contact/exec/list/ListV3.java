@@ -1,4 +1,4 @@
-package com.callor.contact.exec;
+package com.callor.contact.exec.list;
 
 import java.util.ArrayList;
 
@@ -50,6 +50,16 @@ public class ListV3 {
 		 * 		만들어야 할까
 		 * 
 		 * 이러한 이유로 변수를 선언하는 class 를 제공해 준다
+		 * 변수를 선언하는 class 는
+		 * primitive(기본) keyword 와 같거나 유사하며 
+		 * 		첫글자가 대문자이다
+		 * 기본형 변수에 여러가 추가된 확장기능을 첨가하여
+		 * 만들어진 클래스이다
+		 * 
+		 * 변수를 선언하는 클래스 = wrapper class 라고 한다
+		 * 기본 변수 선언 키워드와 거의 유사한 성질을 가지며
+		 * 추가된 확장 기능을 포함하고 있다.
+		 * 
 		 */
 		int num1 = 0;
 		Integer num11 = 0;
@@ -65,9 +75,6 @@ public class ListV3 {
 		
 		boolean bYes1 = true;
 		Boolean bYes11 = true;
-		
-		
-		
 		
 	}
 

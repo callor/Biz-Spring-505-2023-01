@@ -1,4 +1,4 @@
-package com.callor.contact.exec;
+package com.callor.contact.exec.array;
 /**
  * Java 배열(Array)
  * 1. 단일 type 의 데이터만 저장할수 있다

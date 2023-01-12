@@ -1,4 +1,4 @@
-package com.callor.contact.exec;
+package com.callor.contact.exec.array;
 
 public class ArrayV7 {
 
