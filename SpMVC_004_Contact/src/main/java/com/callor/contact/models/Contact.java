@@ -30,7 +30,7 @@ public class Contact {
 	private String c_addr;
 	private String c_hobby;
 	private String c_email;
-	private int c_age = 30;
+	private int c_age;
 	
 	/**
 	 * 생성자(생성자 method)
@@ -61,12 +61,35 @@ public class Contact {
 		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * 
+	 * @param c_id
+	 * @param c_name
+	 * @param c_age
+	 * 
+	 * 3개의 파라메터(전달값)를 주입하면서
+	 * 객체를 초기화 하기 위한 생성자
+	 */
+	public Contact(String c_id, String c_name, String c_email,int c_age) {
+		super();
+		
+		// c_id 매개변수를 통하여 전달받은 값으로
+		// 인스턴스변수(this 가 부착된) 인  
+		// c_id 변수의 초기값으로 하여 객체 생성하기
+		this.c_id = c_id;
+		this.c_name = c_name;
+		this.c_age = c_age;
+		this.c_email = c_email;
+	}
+
 	public Contact(String c_id, String c_name, int c_age) {
 		super();
 		this.c_id = c_id;
 		this.c_name = c_name;
 		this.c_age = c_age;
 	}
+
+	
 	
 	public int getC_age() {
 		return c_age;
