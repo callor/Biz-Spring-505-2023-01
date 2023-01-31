@@ -6,19 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.callor.contact.dao.BookDao;
-import com.callor.contact.models.Book;
+import com.callor.contact.models.BookDto;
+import com.callor.contact.service.BookService;
 
 @RestController
 @RequestMapping(value="/book")
 public class BookController {
-	
 	@Autowired
-	private BookDao bookDao;
+	private BookService bookService;
 	
-	@RequestMapping(value={"/",""},produces = "application/json;charset=UTF-8")
-	public List<Book> list() {
-		return bookDao.selectAll();
+	@RequestMapping(value={"","/"})
+	public List<BookDto> selectAll() {
+		return bookService.selectAll();
 	}
-
 }
+
+

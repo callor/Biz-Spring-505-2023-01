@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.callor.contact.persistence.BookDao">
+
+	<select id="selectAll"  resultType="BookDto" >
+		SELECT * FROM tbl_books
+	</select>
+	<insert id="insert" parameterType="BookDto">
+		INSERT INTO tbl_books(
+			isbn,
+			title,
+			link,
+			image,
+			author,
+			discount,
+			publisher,
+			description,
+			pubdate,
+			price
+		) VALUES (
+			#{isbn},
+			#{title},
+			#{link},
+			#{image},
+			#{author},
+			#{discount},
+			#{publisher},
+			#{description},
+			#{pubdate},
+			#{price}
+		)
+	</insert>
+	<update id="update"  parameterType="BookDto">
+		UPDATE tbl_tbooks SET
+			title = #{title},
+			link = #{link},
+			image = #{image},
+			author = #{author},
+			discount = #{discount},
+			publisher = #{publisher},
+			description = #{description},
+			pubdate = #{pubdate},
+			price = #{price}
+		WHERE isbn = #{isbn}
+	</update>
+
+</mapper> 

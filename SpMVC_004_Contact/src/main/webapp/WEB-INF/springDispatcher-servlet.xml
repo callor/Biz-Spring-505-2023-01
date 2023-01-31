@@ -31,8 +31,6 @@
 	<bean id="sqlFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds"/>
 		<property name="typeAliasesPackage" value="com.callor.contact.models"></property>
-		<property name="mapperLocations" value="/WEB-INF/mapper/*-mapper.xmml"></property>
-		
 	</bean>
 	<bean class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlFactory"/>

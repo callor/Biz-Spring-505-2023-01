@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<annotation-driven />
+	<context:component-scan base-package="com.callor.contact.controller" />
+	<context:component-scan base-package="com.callor.contact.service.impl" />
+	<!-- 
+	css, js, image 등등 코드와 관계없는 일반적인 파일 저장소 지정
+	static resource 저장소 지정
+	
+	만약 link href="/static/css/main.css 라고 요청이 들어 오면
+	webapp/static/css/main.css 파일을 direct 로 응답하라
+	 
+	-->		
+	<resources mapping="/static/**" location="/static/" />
+	
+	<!-- 
+	view 가 있는 project 에서 Controller 로 부터
+	rendering 요청이 들어오면 사용할 설정값
+	
+	만약 Controller.method() 에서 return "home" 이라는 코드가 실행되면
+	"WEB-INF/views/" + "home" + ".jsp" 처럼 파일 경로 이름을 생성하여
+	파일을 찾아라 
+	 -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+</beans:beans>
