@@ -15,6 +15,7 @@ public class ContactDto {
 
 	private Long c_uid;
 	private String c_name;
+	private String c_email;
 	private String c_tel;
 	private String c_addr;
 	private String c_hobby;

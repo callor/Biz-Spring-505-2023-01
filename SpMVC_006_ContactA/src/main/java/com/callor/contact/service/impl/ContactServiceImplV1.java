@@ -1,8 +1,9 @@
 package com.callor.contact.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.callor.contact.models.ContactDto;
@@ -44,6 +45,9 @@ import com.callor.contact.service.ContactService;
 @Service
 public class ContactServiceImplV1 implements ContactService{
 
+	private String[] names ;
+	private List<ContactDto> contactList ;
+	
 	// ContactDao 클래스를 사용하여 만들어진 객체를 사용하고 싶으니
 	// 누군가 나에게 주입(공급)해줘!! 라는 외침
 	private final ContactDao cntDao;
@@ -52,16 +56,26 @@ public class ContactServiceImplV1 implements ContactService{
 		this.cntDao = cntDao;
 		cntDao.create_contact_table();
 		cntDao.create_hobby_table();
+		names = new String[] {"홍길동","이몽룡","성춘향","장녹수","임꺽정"};
+		contactList = new ArrayList<>();
 	}
 	@Override
 	public List<ContactDto> selectALl() {
-		// TODO Auto-generated method stub
-		return null;
+		contactList.removeAll(contactList);
+		Random rnd = new Random();
+		for(int i = 0 ; i < 10 ; i++ ) {
+			int rndIndex = rnd.nextInt(names.length);
+			ContactDto dto = new ContactDto();
+			dto.setC_uid(i+1L);
+			dto.setC_name(names[rndIndex]);
+			contactList.add(dto);
+		}
+		return contactList;
 	}
 	@Override
-	public ContactDao findById(Long id) {
+	public ContactDto findById(Long uid) {
 		// TODO Auto-generated method stub
-		return null;
+		return contactList.get((int)(long)(uid));
 	}
 	@Override
 	public int insert(ContactDto dto) {

@@ -16,7 +16,7 @@ import com.callor.contact.pesistence.ContactDao;
  */
 public interface GenericService<DTO, PK> {
 	public List<DTO> selectALl();
-	public ContactDao findById(PK id);
+	public DTO findById(PK id);
 	public int insert(DTO dto);
 	public int update(DTO dto);
 	public int deleete(PK id);
