@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.callor.contact.pesistence.ContactDao">
+ 
+ 	<select id="selectAll"></select>
+ 	<select id="findById"></select>
+ 	<insert id="insert"></insert>
+ 	<update id="update"></update>
+ 	<delete id="delete"></delete>
+ 	
+ 	<select id="create_contact_table">
+	 	CREATE TABLE IF NOT EXISTS tbl_contacts (
+			c_uid	BIGINT	AUTO_INCREMENT	PRIMARY KEY,
+			c_name	VARCHAR(20)	NOT NULL,	
+			c_tel	VARCHAR(15)	NOT NULL,	
+			c_addr	VARCHAR(125),		
+			c_hobby	VARCHAR(20)		
+		)
+ 	</select>
+ 	
+ 	<select id="create_hobby_table">
+	 	CREATE TABLE IF NOT EXISTS tbl_hobbies (
+			h_uid	BIGINT	AUTO_INCREMENT	PRIMARY KEY,
+			h_cuid	BIGINT	NOT NULL,	
+			h_name	VARCHAR(15)	NOT NULL	
+		)
+ 	</select>
+ 	
+ 	
+ 	
+ 	
+ 
+ </mapper> 
