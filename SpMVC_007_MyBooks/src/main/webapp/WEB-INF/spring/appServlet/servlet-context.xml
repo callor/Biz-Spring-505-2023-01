@@ -21,7 +21,8 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.callor.books" />
+	<context:component-scan base-package="com.callor.books.controller" />
+	<context:component-scan base-package="com.callor.books.service.impl" />
 	
 	
 	
