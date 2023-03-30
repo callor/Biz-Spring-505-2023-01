@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+h1.book {
+	width: 80%;
+	margin: 10px auto;
+	text-align: center;
+}
+
+table.book {
+	width: 80%;
+	margin: 10px auto;
+	border-collapse: collapse;
+}
+
+table.book td, table th {
+	text-align: left;
+	padding: 12px 5px 12px 10px;
+	border-bottom: 1px solid #ddd;
+}
